@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sofa="http://sofastack.io/schema/sofaboot"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://sofastack.io/schema/sofaboot
+       http://sofastack.io/schema/sofaboot.xsd"
+       default-autowire="byName">
+
+    <!-- servers -->
+    <bean id="rpcDemoServiceImpl" class="com.application.base.sofa.runer.rpc.service.impl.RpcDemoServiceImpl"/>
+
+    <!-- server setttings -->
+    <sofa:service ref="rpcDemoServiceImpl" interface="com.application.base.sofa.runer.rpc.service.RpcDemoService">
+        <sofa:binding.bolt/>
+        <sofa:binding.rest/>
+    </sofa:service>
+
+    <!-- bolt request -->
+    <sofa:reference id="rpcDemoReferenceBolt" interface="com.application.base.sofa.runer.rpc.service.RpcDemoService">
+        <sofa:binding.bolt/>
+    </sofa:reference>
+
+    <!-- rest request -->
+    <sofa:reference id="rpcDemoReferenceRest" interface="com.application.base.sofa.runer.rpc.service.RpcDemoService">
+        <sofa:binding.rest/>
+    </sofa:reference>
+
+    <!-- Filter settings -->
+    <bean id="rpcDemoFilter" class="com.application.base.sofa.runer.rpc.filter.RpcDemoFilter"/>
+
+</beans>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<artifactId>sofarpc-demo</artifactId>
+		<groupId>com.application.base</groupId>
+		<version>1.0.0-RELEASE</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.application.base</groupId>
+	<packaging>jar</packaging>
+	<name>sofa-provider</name>
+	<description>sofa project for spring boot : sofa-provider </description>
+	<artifactId>sofa-provider</artifactId>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- 指定一下jdk的版本 ，这里我们使用jdk 1.8 ,默认是1.6 -->
+		<java.version>1.8</java.version>
+		<base-xxxx.version>1.0.0-RELEASE</base-xxxx.version>
+		<boot-mysql.version>1.3.2</boot-mysql.version>
+		<mysql.version>5.1.45</mysql.version>
+		<mybatis.version>3.4.6</mybatis.version>
+	</properties>
+
+	<!-- 依赖信息 -->
+	<dependencies>
+		<dependency>
+			<groupId>com.application.base</groupId>
+			<artifactId>sofa-api</artifactId>
+			<version>1.0.0-RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>runtime-sofa-boot-starter</artifactId>
+		</dependency>
+
+	</dependencies>
+</project>

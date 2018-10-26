@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sofa="http://sofastack.io/schema/sofaboot"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://sofastack.io/schema/sofaboot http://sofastack.io/schema/sofaboot.xsd"
+       default-autowire="byName">
+
+    <bean id="sampleJvmServiceAnnotation" class="com.application.base.sofa.provider.SampleJvmServiceAnnotationImpl"/>
+
+    <bean id="publishServiceWithClient" class="com.application.base.sofa.provider.PublishServiceWithClient" init-method="init"/>
+
+    <!--定义服务实现-->
+    <bean id="sampleJvmService" class="com.application.base.sofa.provider.SampleJvmServiceImpl">
+        <property name="message" value="Hello, jvm service xml implementation!"/>
+    </bean>
+
+    <!--服务实现-->
+    <sofa:service ref="sampleJvmService" interface="com.application.base.sofa.service.SampleSofaJvmService">
+        <sofa:binding.jvm/>
+    </sofa:service>
+
+</beans>
